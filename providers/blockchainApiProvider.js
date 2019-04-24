@@ -20,3 +20,34 @@ exports.getBlockInfo = function(hash) {
 		});
 	});
 };
+
+exports.getLastBlock = function() {
+	return new Promise((resolve, reject) => {
+		request(baseUrl + '/latestblock', function(error, response, body) {
+			try {
+				body = JSON.parse(body);
+				console.log(body);
+				resolve(body);
+			} catch (error) {
+				reject(false);
+			}
+		});
+	});
+};
+
+exports.getMemPoolStatus = function() {
+	return new Promise((resolve, reject) => {
+		request(baseUrl + '/unconfirmed-transactions?format=json', function(
+			error,
+			response,
+			body
+		) {
+			try {
+				body = JSON.parse(body);
+				resolve(body);
+			} catch (error) {
+				reject(false);
+			}
+		});
+	});
+};
