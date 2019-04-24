@@ -8,7 +8,6 @@ exports.user_register = function(req, res) {
 
 	new_user.save(function(err, user) {
 		if (err) res.send(err);
-		console.log("user = ", user);
 		res.json(user);
 	});
 };
