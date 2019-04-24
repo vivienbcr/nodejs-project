@@ -8,7 +8,6 @@ module.exports = function(app) {
 		.get(block.list_all_blocks)
 		.post(block.create_a_block);
 
-	// TODO : faire les fonctions
 	app
 		.route('/block/:blockId')
 		.get(block.read_a_block)

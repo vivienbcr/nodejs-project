@@ -16,7 +16,6 @@ var userschema = new Schema({
 });
 
 userschema.pre('save', function(next) {
-	console.log(this)
   hashedPassword = bcrypt.hashSync(this.password, saltRounds);
   this.password = hashedPassword;
   next();

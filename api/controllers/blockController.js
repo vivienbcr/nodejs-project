@@ -17,13 +17,12 @@ exports.create_a_block = function(req, res) {
 	promise
 		.then(
 			(response) => {
-				console.log('hhhhh');
 				new_block.size = JSON.stringify(response.size);
 				new_block.prev_block = JSON.stringify(response.prev_block);
 				new_block.next_block = JSON.stringify(response.next_block);
 			},
 			(error) => {
-				console.log('hasherr');
+				console.log('Blockchain API Provider PROMISE error : ' + error);
 			}
 		)
 		.then((send) => {
