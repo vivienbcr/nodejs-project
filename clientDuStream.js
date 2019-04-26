@@ -29,7 +29,8 @@ client.on('connect', function(connection) {
 			let addressList = [
 				'1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa',
 				'188888888ikzoy8jmR2byT4WoQsycLxeUH',
-				'12MtwshXcYiLt86yGLEsEibjY4TWB8BLKC'
+				'12MtwshXcYiLt86yGLEsEibjY4TWB8BLKC',
+				'3H98NVp6qjtKMN2xN4WiWmCHhDyoBd6TwE'
 			];
 			for (let i = 0; i < addressList.length; i++) {
 				connection.sendUTF(addressList[i]);
