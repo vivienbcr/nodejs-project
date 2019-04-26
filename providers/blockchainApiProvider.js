@@ -13,7 +13,7 @@ exports.getBlockInfo = function(hash) {
 				};
 				resolve(blockInfo);
 			} catch (error) {
-				console.log("Blockchain API Provider error : " + error);
+				console.log('Blockchain API Provider error : ' + error);
 				reject(false);
 			}
 		});
@@ -37,6 +37,23 @@ exports.getLastBlock = function() {
 exports.lastTransactions = function() {
 	return new Promise((resolve, reject) => {
 		request(baseUrl + '/unconfirmed-transactions?format=json', function(
+			error,
+			response,
+			body
+		) {
+			try {
+				body = JSON.parse(body);
+				resolve(body);
+			} catch (error) {
+				reject(false);
+			}
+		});
+	});
+};
+
+exports.unspendsOutput = function(address) {
+	return new Promise((resolve, reject) => {
+		request(baseUrl + '/unspent?active=' + address, function(
 			error,
 			response,
 			body
