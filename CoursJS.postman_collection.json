@@ -98,7 +98,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost/blocks",
+			"name": "http://localhost:3000/blocks",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -131,6 +131,36 @@
 					]
 				},
 				"description": "get block with jwtoken authorization in header"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/blocks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVjYzMwM2RiNzdiMjk3NDQ1ZDg2MGJjNiIsImVtYWlsIjoidml2aWVuLmF6ZUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRZV3l4VDBpQjdNL2RENW1yS2wzZC4uQndRMURXLmNsNnowSXhwZTJjSFkxQzNMMWtvaWtaZSIsIl9fdiI6MH0sImlhdCI6MTU1NjI4NTE0NSwiZXhwIjoxNTU4ODc3MTQ1fQ.snG0eE-jHWAwqyx44oHZzpOcyrrbcOVsOIkXOaQr-mg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/blocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blocks"
+					]
+				},
+				"description": "get"
 			},
 			"response": []
 		},
