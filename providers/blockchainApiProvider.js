@@ -35,7 +35,7 @@ exports.getLastBlock = function() {
 	});
 };
 
-exports.getMemPoolStatus = function() {
+exports.lastTransactions = function() {
 	return new Promise((resolve, reject) => {
 		request(baseUrl + '/unconfirmed-transactions?format=json', function(
 			error,

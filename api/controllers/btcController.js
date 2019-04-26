@@ -11,8 +11,8 @@ exports.btc_last_block = function(req, res) {
 		}
 	);
 };
-exports.btc_mempool_status = function(req, res) {
-	const promise = blockchainApiProvider.getMemPoolStatus();
+exports.btc_last_transactions = function(req, res) {
+	const promise = blockchainApiProvider.lastTransactions();
 	promise.then(
 		(response) => {
 			console.log(response.txs.length);
