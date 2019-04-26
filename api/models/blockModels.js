@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
 var blockSchema = new Schema({
 	hash: {
 		type: String,
-		required: 'hash required'
+		required: "hash required"
 	},
 	Created_date: {
 		type: Date,
@@ -13,7 +13,7 @@ var blockSchema = new Schema({
 	},
 	miner: {
 		type: String,
-		default: 'Unknown'
+		default: "Unknown"
 	},
 	size: {
 		type: Number
@@ -26,4 +26,4 @@ var blockSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('Blocks', blockSchema);
+module.exports = mongoose.model("Blocks", blockSchema);

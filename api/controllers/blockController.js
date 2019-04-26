@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
-Block = require('../models/blockModels');
+Block = require("../models/blockModels");
 
-const blockchainApiProvider = require('../../providers/blockchainApiProvider.js');
+const blockchainApiProvider = require("../../providers/blockchainApiProvider.js");
 
 exports.list_all_blocks = function(req, res) {
 	Block.find({}, function(err, block) {
@@ -16,17 +15,16 @@ exports.create_a_block = function(req, res) {
 	const promise = blockchainApiProvider.getBlockInfo(req.body.hash);
 	promise
 		.then(
-			(response) => {
-				console.log('hhhhh');
+			response => {
 				new_block.size = JSON.stringify(response.size);
 				new_block.prev_block = JSON.stringify(response.prev_block);
 				new_block.next_block = JSON.stringify(response.next_block);
 			},
-			(error) => {
-				console.log('hasherr');
+			error => {
+				console.log("Blockchain API Provider PROMISE error : " + error);
 			}
 		)
-		.then((send) => {
+		.then(send => {
 			new_block.save(function(err, block) {
 				if (err) res.send(err);
 				res.status(201).json(block);
@@ -60,7 +58,7 @@ exports.delete_a_block = function(req, res) {
 		},
 		function(err, block) {
 			if (err) res.send(err);
-			res.json({ message: 'Block successfully deleted' });
+			res.json({ message: "Block successfully deleted" });
 		}
 	);
 };
