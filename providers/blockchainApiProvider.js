@@ -1,9 +1,10 @@
-const request = require('request');
-const baseUrl = 'https://blockchain.info';
+const request = require("request");
+const baseUrl = "https://blockchain.info";
+const statsUrl = "https://api.blockchain.info";
 
 exports.getBlockInfo = function(hash) {
 	return new Promise((resolve, reject) => {
-		request(baseUrl + '/rawblock/' + hash, function(error, response, body) {
+		request(baseUrl + "/rawblock/" + hash, function(error, response, body) {
 			try {
 				body = JSON.parse(body);
 				var blockInfo = {
@@ -22,7 +23,7 @@ exports.getBlockInfo = function(hash) {
 
 exports.getLastBlock = function() {
 	return new Promise((resolve, reject) => {
-		request(baseUrl + '/latestblock', function(error, response, body) {
+		request(baseUrl + "/latestblock", function(error, response, body) {
 			try {
 				body = JSON.parse(body);
 				console.log(body);
@@ -36,11 +37,24 @@ exports.getLastBlock = function() {
 
 exports.lastTransactions = function() {
 	return new Promise((resolve, reject) => {
-		request(baseUrl + '/unconfirmed-transactions?format=json', function(
+		request(baseUrl + "/unconfirmed-transactions?format=json", function(
 			error,
 			response,
 			body
 		) {
+			try {
+				body = JSON.parse(body);
+				resolve(body);
+			} catch (error) {
+				reject(false);
+			}
+		});
+	});
+};
+
+exports.getPools = function() {
+	return new Promise((resolve, reject) => {
+		request(statsUrl + "/pools", function(error, response, body) {
 			try {
 				body = JSON.parse(body);
 				resolve(body);

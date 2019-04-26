@@ -1,12 +1,12 @@
-const blockchainApiProvider = require('../../providers/blockchainApiProvider');
+const blockchainApiProvider = require("../../providers/blockchainApiProvider");
 
 exports.btc_last_block = function(req, res) {
 	const promise = blockchainApiProvider.getLastBlock();
 	promise.then(
-		(response) => {
+		response => {
 			res.status(200).json(response);
 		},
-		(error) => {
+		error => {
 			res.status(500).json(error);
 		}
 	);
@@ -14,11 +14,11 @@ exports.btc_last_block = function(req, res) {
 exports.btc_last_transactions = function(req, res) {
 	const promise = blockchainApiProvider.lastTransactions();
 	promise.then(
-		(response) => {
+		response => {
 			console.log(response.txs.length);
 			res.status(200).json(response);
 		},
-		(error) => {
+		error => {
 			res.status(500).json(error);
 		}
 	);
@@ -27,7 +27,7 @@ exports.btc_last_transactions = function(req, res) {
 exports.btc_unspends_output = function(req, res) {
 	const promise = blockchainApiProvider.unspendsOutput(req.params.address);
 	promise.then(
-		(response) => {
+		response => {
 			//console.log(response.unspent_outputs.length);
 			let balance = 0;
 			for (let i = 0; i < response.unspent_outputs.length; i++) {
@@ -36,7 +36,7 @@ exports.btc_unspends_output = function(req, res) {
 			balance = balance / 100000000;
 			res.status(200).json(balance);
 		},
-		(error) => {
+		error => {
 			res.status(404).json(error);
 		}
 	);
