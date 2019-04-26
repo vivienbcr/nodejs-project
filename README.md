@@ -46,7 +46,7 @@ GET : get pools stats, push it in mongodb
 
 * Bcrypt for password encryption
 
-* REGEX to check valid email format
+* REGEX to check valid email forma
 
 ## Web Socket
 
