@@ -4,12 +4,18 @@ const config = require("../../config/secrets");
 const bcrypt = require("bcrypt");
 
 exports.user_register = function(req, res) {
-	let new_user = new User(req.body);
+	console.log(req.body.email);
+	let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	if (re.test(String(req.body.email).toLowerCase())) {
+		let new_user = new User(req.body);
 
-	new_user.save(function(err, user) {
-		if (err) res.send(err);
-		res.json(user);
-	});
+		new_user.save(function(err, user) {
+			if (err) res.send(err);
+			res.json(user);
+		});
+	} else {
+		res.sendStatus(400);
+	}
 };
 
 exports.user_login = function(req, res) {
