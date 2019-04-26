@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const ws = require('./websockets/ws');
 //parser les requêtes
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
