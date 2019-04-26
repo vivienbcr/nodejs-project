@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "e5a67558-95bd-484f-b664-60107618db59",
+		"name": "CoursJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/blocks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"hash\":\"000000008a91ac6ac787eda6a2f5a7ddc94311322c3f80ddf0f144cb7c2ba7bc\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/blocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"vivKKi@dddenc.comom\",\n\"password\":\"azerty\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				},
+				"description": "Register new user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\":\"vivien@z.com\",\n\"password\":\"azerty\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "loggin registred user\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/blocks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVjYmYyOTYzYjlmZDc3NDNhOTcxZmEwMSIsImVtYWlsIjoidml2aWVuQHouY29tIiwicGFzc3dvcmQiOiJhemVydHkiLCJfX3YiOjB9LCJpYXQiOjE1NTYwMzQ1NzQsImV4cCI6MTU1ODYyNjU3NH0.uwpZBoNVx-kRcis4EvxJkEKO96eThz7vUWyl-qWuF74",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/blocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blocks"
+					],
+					"query": [
+						{
+							"key": "au",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "get block with jwtoken authorization in header"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/lastTransactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/lastTransactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"lastTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/lastBlock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/lastTransactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"lastTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/unspend/1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/unspend/1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"unspend",
+						"1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/init-pools",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/init-pools",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"init-pools"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
