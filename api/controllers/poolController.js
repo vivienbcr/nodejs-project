@@ -11,12 +11,11 @@ exports.init_pool_list = function(req, res) {
 					name: key,
 					minedBlock: response[key]
 				});
-				new_pool.save(function(err, block) {
+				new_pool.save(function(err, pool) {
 					if (err) res.send(err);
-					res.status(201).json(block);
 				});
 			});
-			res.status(200).json(response);
+			res.status(201).json(response);
 		},
 		error => {
 			res.status(500).json(error);
