@@ -12,8 +12,10 @@ mongoose.connect('mongodb://localhost/coursnodedb');
 
 const blockRoutes = require('./api/routes/blockRoutes');
 const userRoutes = require('./api/routes/userRoutes');
+const btcRoutes = require('./api/routes/btcRoutes');
 blockRoutes(app);
 userRoutes(app);
+btcRoutes(app);
 
 const hostname = '127.0.0.1';
 const port = 3000;
